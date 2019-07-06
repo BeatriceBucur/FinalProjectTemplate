@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>sda.final</groupId>
-    <artifactId>changename</artifactId>
+    <artifactId>BarberShop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>changename</name>
-    <description>Final SDA Application</description>
+    <name>BarberShop</name>
+    <description>Final SDA Application - BarberShop</description>
 
     <properties>
         <java.version>1.8</java.version>
