@@ -17,8 +17,9 @@ public class Workitem {
     @GenericGenerator(name = "native",
             strategy = "native"
     )
-
     Integer workitem_id;
+
+
     String workitem_name;
 
     /*
@@ -29,8 +30,6 @@ public class Workitem {
     pentru o rezervare nu pot avea decat un singur tip de serviciu
     */
 
-    @OneToOne
-    @JoinColumn(name = "workitem_id")
-    Reservation reservation;
+
 
 }
