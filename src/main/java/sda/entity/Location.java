@@ -15,6 +15,6 @@ public class Location {
     String location_name;
 
 
-
+//Ceva undeva
 
 }
