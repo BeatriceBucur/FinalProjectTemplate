@@ -18,7 +18,7 @@ create table if not exists workitem
     workitem_name char(15) not null,
     workitem_fee int(3) not null,
     workitem_duration int(2) not null
-)
+);
 
 INSERT INTO barbershop.workitem (workitem_id, workitem_name, workitem_fee, workitem_duration) VALUES (1, 'haircut', 30, 20);
 INSERT INTO barbershop.workitem (workitem_id, workitem_name, workitem_fee, workitem_duration) VALUES (2, 'shave', 50, 20);

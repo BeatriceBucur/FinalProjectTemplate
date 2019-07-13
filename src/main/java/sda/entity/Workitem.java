@@ -1,34 +1,27 @@
 package sda.entity;
 
+        import com.sun.org.glassfish.gmbal.NameValue;
         import org.hibernate.annotations.GenericGenerator;
         import javax.persistence.*;
+        import java.util.List;
 
 @Entity
 @Table(name = "workitem")
 public class Workitem {
 
     @Id
-    @Column(name = "workitem_id",
-            unique = true
-    )
-    @GeneratedValue(strategy = GenerationType.AUTO,
-            generator = "native"
-    )
-    @GenericGenerator(name = "native",
-            strategy = "native"
-    )
+    @Column(name = "workitem_id", unique = true)
     Integer workitem_id;
 
 
-    String workitem_name;
+    @Column ( name  = "workitem_name" )
+    public String name;
 
-    /*
-    mapez unu la unu un workitem de o rezervare pentru ca,
-    in ipoteza noastra simplificata de lucru, avem fie serviciul
-    de haircut, fie cel de shave, fie al 3-lea serviciu care este
-    suma celor 2 si se numeste Haircut-and-Shave. asa ca in realitate,
-    pentru o rezervare nu pot avea decat un singur tip de serviciu
-    */
+    @Column ( name  = "workitem_fee" )
+    public Integer workitem_fee;
+
+    @Column ( name  = "workitem_duration" )
+    public Integer workitem_duration;
 
 
 

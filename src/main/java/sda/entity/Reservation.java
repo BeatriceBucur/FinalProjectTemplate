@@ -20,6 +20,24 @@ public class Reservation {
     )
     Integer reservation_id;
 
+    @Column(name = "client_name")
+    String client_name;
+
+    @Column(name = "client_email")
+    String client_email;
+
+    @Column(name = "client_mobile")
+    Integer client_mobile;
+
+    @Column(name = "location_id")
+    Integer location_id;
+
+    @Column(name = "workitem_id")
+    Integer workitem_id;
+
+/*
     @JoinColumn(name = "reservation_id", referencedColumnName = "id")
-    private Workitem workitem;
+    public Workitem workitem_name;
+
+ */
 }

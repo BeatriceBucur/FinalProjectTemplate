@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>BarberShop Workitem list!</title>
+</head>
+<body>
+<h1>check out our cool barber services list</h1>
+<ol th:each ="workitem:${name}">
+
+    <li th:text ="${workitem.name}"></li>
+</ol>
+
+</body>
+</html>
