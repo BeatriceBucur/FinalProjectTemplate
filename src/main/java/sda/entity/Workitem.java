@@ -1,9 +1,8 @@
 package sda.entity;
 
-        import com.sun.org.glassfish.gmbal.NameValue;
-        import org.hibernate.annotations.GenericGenerator;
-        import javax.persistence.*;
-        import java.util.List;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "workitem")
@@ -11,6 +10,16 @@ public class Workitem {
 
     @Id
     @Column(name = "workitem_id", unique = true)
+
+
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "native")
+    @GenericGenerator(
+            name = "native",
+            strategy = "native"
+    )
+
     Integer workitem_id;
 
 
@@ -24,5 +33,17 @@ public class Workitem {
     public Integer workitem_duration;
 
 
+    @Override
+    public String toString() {
+        return "Workitem{" +
+                "workitem_id=" + workitem_id +
+                ", name='" + name + '\'' +
+                ", workitem_fee=" + workitem_fee +
+                ", workitem_duration=" + workitem_duration +
+                '}';
+    }
 
+    public Workitem(){
+
+    }
 }
