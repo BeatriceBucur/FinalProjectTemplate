@@ -29,8 +29,7 @@ public class Location {
     @Column (name = "location_adress")
     public String adress;
 
-    @OneToOne
-    public Reservation reservation;
+
 
     public Location (Integer id, String name, String adress){
         this.id = id;

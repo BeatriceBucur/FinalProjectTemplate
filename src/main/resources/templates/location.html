@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Barbershop Location</title>
+</head>
+<body>
+<h1>Please select location</h1>
+<ol th:each ="location:${location}">
+
+    <li th:text ="${location.id}"></li>
+    <li th:text ="${location.name}"></li>
+</ol>
+
+</body>
+</html>

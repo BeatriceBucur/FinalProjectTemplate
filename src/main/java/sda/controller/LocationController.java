@@ -28,10 +28,10 @@ public class LocationController {
     @GetMapping("/location")
     public String homePage(Model model) {
         List<LocationDTO> allLocation = locationService.getAllLocation();
-        System.out.println("SS");
+
         model.addAttribute("location", allLocation);
 
-        return "home2";
+        return "location";
 
     }
 
