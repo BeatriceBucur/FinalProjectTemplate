@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(name = "workitem")
 public class Workitem {
 
+
     @Id
     @Column(name = "workitem_id", unique = true)
 
@@ -20,7 +21,7 @@ public class Workitem {
             strategy = "native"
     )
 
-    Integer workitem_id;
+   public Integer id;
 
 
     @Column ( name  = "workitem_name" )
@@ -36,7 +37,7 @@ public class Workitem {
     @Override
     public String toString() {
         return "Workitem{" +
-                "workitem_id=" + workitem_id +
+                "workitem_id=" + id +
                 ", name='" + name + '\'' +
                 ", workitem_fee=" + workitem_fee +
                 ", workitem_duration=" + workitem_duration +

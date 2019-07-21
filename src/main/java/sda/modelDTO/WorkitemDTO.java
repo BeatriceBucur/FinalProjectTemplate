@@ -5,11 +5,21 @@ import sda.entity.Workitem;
 public class WorkitemDTO {
 
     //fields
-    public String workitem_name;
+   private String name;
+   private Integer id;
 
     //constructor
-    public WorkitemDTO (String workitem_name){
-        this.workitem_name = workitem_name;
+    public WorkitemDTO (String name, Integer id){
+        this.name = name;
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     //method
