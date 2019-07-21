@@ -15,6 +15,8 @@ public class LocationService {
 
     @Autowired
     LocationRepository locationRepository;
+    @Autowired
+    LocationService locationService;
 
     public LocationDTO getLocationById(Integer id) {
         Optional<Location> byId = locationRepository.findById(id);
