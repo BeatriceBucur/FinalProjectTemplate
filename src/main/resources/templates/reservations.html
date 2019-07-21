@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>BarberShop Reservations Page</title>
 </head>
 <body>
 <h1>Fancy a haircut?</h1>
+<ol th:each ="reservation:${reservations}">
+
+    <li th:text ="${reservation.id}"></li>
+    <li th:text ="${reservation.client_name}"></li>
+    <li th:text ="${reservation.client_email}"></li>
+    <li th:text ="${reservation.client_mobile}"></li>
+    <li th:text ="${reservation.location}"></li>
+    <li th:text ="${reservation.workitem}"></li>
+
+
+</ol>
 </body>
 </html>

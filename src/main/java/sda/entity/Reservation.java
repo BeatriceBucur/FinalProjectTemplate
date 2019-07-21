@@ -20,36 +20,37 @@ public class Reservation {
     @GenericGenerator(name = "native",
             strategy = "native"
     )
-    Integer reservation_id;
+   public Integer id;
 
     //@OneToOne(cascade = CascadeType.ALL, mappedBy = "reservation")
     @OneToOne
     @JoinColumn(name="location_id")
-    Location location;
+    public Location location;
 
     @Column(name = "client_name")
-    String client_name;
+    public String client_name;
 
     @Column(name = "client_email")
-    String client_email;
+    public String client_email;
 
     @Column(name = "client_mobile")
-    Integer client_mobile;
+    public Integer client_mobile;
 
 
     //@OneToOne(cascade = CascadeType.ALL, mappedBy = "reservation")
     @OneToOne
     @JoinColumn(name="workitem_id")
-    Workitem workitem;
+    public Workitem workitem;
 
     @Override
     public String toString() {
         return "Reservation{" +
-                "reservation_id=" + reservation_id +
+                "id=" + id +
                 ", location=" + location +
                 ", client_name='" + client_name + '\'' +
                 ", client_email='" + client_email + '\'' +
                 ", client_mobile=" + client_mobile +
+                ", workitem=" + workitem +
                 '}';
     }
 
