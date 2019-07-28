@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface WorkitemRepository extends JpaRepository<Workitem, Integer> {
 //findWorkitemByWorkitem_name(
-Workitem findWorkitemByName(String name);
+List<Workitem> findWorkitemByName(String name);
 
 }
