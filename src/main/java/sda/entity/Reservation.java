@@ -58,6 +58,53 @@ public class Reservation {
 
     }
 
+    public Location getLocation() {
+        return location;
+    }
+
+    public Reservation setLocation(Location location) {
+        this.location = location;
+        return this;
+    }
+
+    public String getName() {
+        return client_name;
+    }
+
+    public Reservation setName(String client_name) {
+        this.client_name = client_name;
+        return this;
+    }
+
+    public String getClient_email() {
+        return client_email;
+    }
+
+    public Reservation setClient_email(String client_email) {
+        this.client_email = client_email;
+        return this;
+    }
+
+    public Integer getClient_mobile() {
+        return client_mobile;
+    }
+
+    public Reservation setClient_mobile(Integer client_mobile) {
+        this.client_mobile = client_mobile;
+        return this;
+    }
+
+    public Workitem getWorkitem() {
+        return workitem;
+    }
+
+    public Reservation setWorkitem(Workitem workitem) {
+        this.workitem = workitem;
+        return this;
+    }
+
+
+
     /*
     @JoinColumn(name = "reservation_id", referencedColumnName = "id")
     public Workitem workitem_name;

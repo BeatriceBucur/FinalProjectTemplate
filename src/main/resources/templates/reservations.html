@@ -1,21 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="UTF-8">
-    <title>BarberShop Reservations Page</title>
+
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+
 </head>
 <body>
-<h1>Fancy a haircut?</h1>
-<ol th:each ="reservation:${reservations}">
-
-    <li th:text ="${reservation.id}"></li>
-    <li th:text ="${reservation.client_name}"></li>
-    <li th:text ="${reservation.client_email}"></li>
-    <li th:text ="${reservation.client_mobile}"></li>
-    <li th:text ="${reservation.location}"></li>
-    <li th:text ="${reservation.workitem}"></li>
+<header>
+    <div>
+        <h3>BarberShop reservation page</h3>
+    </div>
+</header>
 
 
-</ol>
+<form action="/reservations/addReservations" method="post">
+    Name: <br>
+    <input type ="text" name = "client_name" value = "Name"/>
+    <br>
+    Email:<br>
+    <input type ="text" name="client_email" value = "Email"/>
+    <br>
+    Contact Number:<br>
+    <input type = "number" name = "client_mobile" value = "Mobile"/>
+    <br>
+    Select Location:<br>
+    <select name = "location">
+        <option type ="text" value = "Bucuresti">Bucuresti</option>
+        <option type ="text" value="Sibiu">Sibiu</option>
+    </select>
+    <br>
+    Select Services:<br>
+    <select name = "workitem">
+        <option type ="text" value="haircut">Haircut</option>
+        <option type ="text" value="shave">Shave</option>
+        <option type ="text" value="haircutAndShave">Haircut and Shave</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+
+
+    </tr>
+</form>
+
+
 </body>
 </html>

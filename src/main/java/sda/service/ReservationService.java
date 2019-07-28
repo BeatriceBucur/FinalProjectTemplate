@@ -1,14 +1,14 @@
 package sda.service;
 
-import javafx.util.Builder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ContentDisposition;
 import org.springframework.stereotype.Service;
 import sda.entity.Location;
 import sda.entity.Reservation;
 import sda.entity.Workitem;
 import sda.modelDTO.ReservationDTO;
+import sda.repository.LocationRepository;
 import sda.repository.ReservationRepository;
+import sda.repository.WorkitemRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +22,13 @@ public class ReservationService {
     @Autowired
     ReservationService reservationService;
 
-    Location location;
-    Workitem workitem;
+    @Autowired
+    LocationRepository locationRepository;
+
+    @Autowired
+    WorkitemRepository workitemRepository;
+
+
 
     public ReservationDTO getReservationById(Integer id){
         Optional<Reservation> byId = reservationRepository.findById(id);
@@ -55,5 +60,26 @@ public class ReservationService {
         }
 
         return allReservations;
+    }
+
+    public Reservation saveRes(ReservationDTO reservation) {
+        Reservation res = new Reservation();
+
+        Workitem dtoWorkitem =
+                workitemRepository.findWorkitemByName(reservation.getWorkitem());
+        Location dtoLocation =
+                locationRepository.findByName(reservation.getLocation());
+
+
+        res.setName(reservation.getClient_name());
+        res.setClient_email(reservation.getClient_email());
+        res.setClient_mobile(reservation.getClient_mobile());
+        res.setLocation(dtoLocation);
+        res.setWorkitem(dtoWorkitem);
+
+        reservationRepository.save(res);
+
+        return res;
+
     }
 }

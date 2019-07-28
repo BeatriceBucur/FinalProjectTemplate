@@ -4,7 +4,7 @@ use barbershop;
 
 create table if not exists reservation
 (
-    reservation_id int not null primary key ,
+    reservation_id int not null auto_increment primary key ,
     client_name char(30) not null,
     client_email char(50) not null,
     client_mobile int(10) not null,
@@ -29,12 +29,12 @@ create table if not exists location
 
 
 ALTER TABLE reservation
-ADD constraint fk_reservation_location FOREIGN KEY (location_id)
-REFERENCES location(location_id);
+    ADD constraint fk_reservation_location FOREIGN KEY (location_id)
+        REFERENCES location(location_id);
 
 ALTER TABLE reservation
-ADD CONSTRAINT fk_reservatin_workitem FOREIGN KEY (workitem_id)
-REFERENCES workitem(workitem_id);
+    ADD CONSTRAINT fk_reservatin_workitem FOREIGN KEY (workitem_id)
+        REFERENCES workitem(workitem_id);
 INSERT INTO barbershop.workitem (workitem_id, workitem_name, workitem_fee, workitem_duration) VALUES (1, 'haircut', 30, 20);
 INSERT INTO barbershop.workitem (workitem_id, workitem_name, workitem_fee, workitem_duration) VALUES (2, 'shave', 50, 20);
 INSERT INTO barbershop.workitem (workitem_id, workitem_name, workitem_fee, workitem_duration) VALUES (3, 'haircutAndShave', 80, 40);

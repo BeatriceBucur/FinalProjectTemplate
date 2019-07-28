@@ -75,24 +75,54 @@ public class ReservationDTO {
         return id;
     }
 
+    public ReservationDTO setId(Integer id) {
+        this.id = id;
+        return this;
+    }
+
     public String getClient_name() {
         return client_name;
+    }
+
+    public ReservationDTO setClient_name(String client_name) {
+        this.client_name = client_name;
+        return this;
     }
 
     public String getClient_email() {
         return client_email;
     }
 
+    public ReservationDTO setClient_email(String client_email) {
+        this.client_email = client_email;
+        return this;
+    }
+
     public Integer getClient_mobile() {
         return client_mobile;
     }
 
-    public String  getLocation() {
+    public ReservationDTO setClient_mobile(Integer client_mobile) {
+        this.client_mobile = client_mobile;
+        return this;
+    }
+
+    public String getLocation() {
         return location;
     }
 
-    public String  getWorkitem() {
+    public ReservationDTO setLocation(String location) {
+        this.location = location;
+        return this;
+    }
+
+    public String getWorkitem() {
         return workitem;
+    }
+
+    public ReservationDTO setWorkitem(String workitem) {
+        this.workitem = workitem;
+        return this;
     }
 }
 
