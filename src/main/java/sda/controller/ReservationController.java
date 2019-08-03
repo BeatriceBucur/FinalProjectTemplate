@@ -8,6 +8,7 @@ import sda.entity.Reservation;
 import sda.modelDTO.ReservationDTO;
 import sda.service.ReservationService;
 
+import java.text.ParseException;
 import java.util.List;
 
 @Controller
@@ -19,7 +20,7 @@ public class ReservationController {
 
 
     @PostMapping(value = "/addReservations", consumes = "application/x-www-form-urlencoded")
-    public String addReservation(@ModelAttribute ReservationDTO reservation){
+    public String addReservation(@ModelAttribute ReservationDTO reservation) throws ParseException {
 
 
         Reservation reservationEntity = reservationService.saveRes(reservation);

@@ -3,6 +3,9 @@ package sda.modelDTO;
 import sda.entity.Location;
 import sda.entity.Workitem;
 
+import java.sql.Time;
+import java.text.DateFormat;
+
 
 public class ReservationDTO {
 
@@ -10,6 +13,8 @@ public class ReservationDTO {
     private String client_name;
     private String client_email;
     private Integer client_mobile;
+    private String reservation_day;
+    private String reservation_hour;
     private String location;
     private String workitem;
 
@@ -36,6 +41,16 @@ public class ReservationDTO {
             return this;
         }
 
+        public ReservationDTOBuilder setReservationDay(String reservationDay){
+            reservationDTO.reservation_day = reservationDay;
+            return this;
+        }
+
+        public ReservationDTOBuilder setReservationHour(String reservationHour){
+            reservationDTO.reservation_hour = reservationHour;
+            return this;
+        }
+
         public ReservationDTOBuilder setClientEmail(String client_email) {
             reservationDTO.client_email = client_email;
             return this;
@@ -59,17 +74,7 @@ public class ReservationDTO {
 
     }
 
-    @Override
-    public String toString() {
-        return "ReservationDTO{" +
-                "id=" + id +
-                ", client_name='" + client_name + '\'' +
-                ", client_email='" + client_email + '\'' +
-                ", client_mobile=" + client_mobile +
-                ", location='" + location + '\'' +
-                ", workitem='" + workitem + '\'' +
-                '}';
-    }
+
 
     public Integer getId() {
         return id;
@@ -122,6 +127,24 @@ public class ReservationDTO {
 
     public ReservationDTO setWorkitem(String workitem) {
         this.workitem = workitem;
+        return this;
+    }
+
+    public String getReservation_day() {
+        return reservation_day;
+    }
+
+    public ReservationDTO setReservation_day(String reservation_day) {
+        this.reservation_day = reservation_day;
+        return this;
+    }
+
+    public String getReservation_hour() {
+        return reservation_hour;
+    }
+
+    public ReservationDTO setReservation_hour(String reservation_hour) {
+        this.reservation_hour = reservation_hour;
         return this;
     }
 }

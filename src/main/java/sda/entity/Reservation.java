@@ -1,10 +1,9 @@
 package sda.entity;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.engine.spi.CascadingAction;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Date;
 
 @Entity
 @Table(name = "reservation")
@@ -20,11 +19,11 @@ public class Reservation {
     @GenericGenerator(name = "native",
             strategy = "native"
     )
-   public Integer id;
+    public Integer id;
 
     //@OneToOne(cascade = CascadeType.ALL, mappedBy = "reservation")
     @OneToOne
-    @JoinColumn(name="location_id")
+    @JoinColumn(name = "location_id")
     public Location location;
 
     @Column(name = "client_name")
@@ -33,13 +32,22 @@ public class Reservation {
     @Column(name = "client_email")
     public String client_email;
 
+    /*    @Column(name="reservation_day")
+        public DateFormat reservation_day;
+
+        @Column(name = "reservation_hour")
+        public Time reservation_hour;*/
+    @Column(name = "res_date")
+    @Temporal(TemporalType.TIMESTAMP)
+    Date resDate;
+
     @Column(name = "client_mobile")
     public Integer client_mobile;
 
 
     //@OneToOne(cascade = CascadeType.ALL, mappedBy = "reservation")
     @OneToOne
-    @JoinColumn(name="workitem_id")
+    @JoinColumn(name = "workitem_id")
     public Workitem workitem;
 
     @Override
@@ -49,12 +57,13 @@ public class Reservation {
                 ", location=" + location +
                 ", client_name='" + client_name + '\'' +
                 ", client_email='" + client_email + '\'' +
+
                 ", client_mobile=" + client_mobile +
                 ", workitem=" + workitem +
                 '}';
     }
 
-    public Reservation(){
+    public Reservation() {
 
     }
 
@@ -85,6 +94,7 @@ public class Reservation {
         return this;
     }
 
+
     public Integer getClient_mobile() {
         return client_mobile;
     }
@@ -105,7 +115,16 @@ public class Reservation {
 
 
 
-    /*
+    public Date getResDate() {
+        return resDate;
+    }
+
+    public Reservation setResDate(Date resDate) {
+        this.resDate = resDate;
+        return this;
+    }
+
+/*
     @JoinColumn(name = "reservation_id", referencedColumnName = "id")
     public Workitem workitem_name;
 
