@@ -20,11 +20,15 @@ public class ReservationController {
 
 
     @PostMapping(value = "/addReservations", consumes = "application/x-www-form-urlencoded")
-    public String addReservation(@ModelAttribute ReservationDTO reservation) throws ParseException {
+    public String addReservation(Model model,@ModelAttribute ReservationDTO reservation) throws ParseException {
 
 
         Reservation reservationEntity = reservationService.saveRes(reservation);
         reservation.setId(reservationEntity.id);
+        model.addAttribute("workitem", reservation.getWorkitem());
+        model.addAttribute("reservation_hour",reservation.getReservation_hour());
+        model.addAttribute("location",reservation.getLocation());
+        model.addAttribute("reservation_day",reservation.getReservation_day());
 
        return "succes";
 
