@@ -1,3 +1,9 @@
-<div th:fragment="success"> success fragment
+<div th:fragment="success">
     <span th:text ="${resId}"></span>
+    <div> Felicitari, ai fost programat pentru serviciul <span th:text ="${workitem}"></span>
+          la ora <span th:text ="${reservation_hour}"></span>
+          in locatia <span th:text ="${location}"></span>
+          la data de <span th:text ="${reservation_day}"></span>
+    </div>
 </div>
+
