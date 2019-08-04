@@ -1,40 +1,62 @@
-
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="succes">
-    <meta charset="UTF-8" />
-    <link th:href = "@{/templates/succes.html}" rel="succes">
-
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Barber King</title>
+    <style type="text/css">
+        A:link { COLOR: gold; TEXT-DECORATION: none; font-weight: normal }
+        A:visited { COLOR: grey; TEXT-DECORATION: none; font-weight: normal }
+        A:hover { COLOR: white; TEXT-DECORATION: none; font-weight: normal }
+    </style>
 </head>
-<body>
-<div th:replace="fragments/header :: header">
-    <!-- ============================================================================ -->
-    <!-- This content is only used for static prototyping purposes (natural templates)-->
-    <!-- and is therefore entirely optional, as this markup fragment will be included -->
-    <!-- from "fragments/header.html" at runtime.                                     -->
-    <!-- ============================================================================ -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Static header</a>
-            </div>
+<body style="background-color:black;">
 
 
-        </div>
-    </div>
-</div>
+<table style="color: white; width:100%">
 
-<div th:replace="fragments/success/content :: success"></div>
-<div class="container">
-    <div class="hero-unit">
-        <h1>Succes</h1>
-        <p>
-            Programarea s-a realizat cu succes!
-        </p>
+    <tr style="font-family: Times New Roman;">
+        <th><a href = "/home">Home - There's no place like home</a></th>
+        <th><a href = "/reservations">Reservations - You are HERE</a></th>
+        <th><a href = "/contact">Contact - let's keep in touch</a></th>
+    </tr>
+    <tr>
+        &nbsp;
+    </tr>
 
-    </div>
-    <div th:replace="fragments/footer :: footer">&copy; 2019 BarberShop</div>
-</div>
-...
+    <tr>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+    </tr>
+
+
+    <tr>
+        <td style = "text-align: center" colspan="1">
+            <h2>
+                Felicitari
+                <span th:text  = "${client_name}"></span>
+                ai fost programat pentru
+                <span th:text  = "${workitem}"></span>
+                la ora  <span th:text  = "${reservation_hour}"></span>
+                in <span th:text  = "${location}"></span>
+                in data de <span th:text  = "${reservation_day}">
+            </span>
+
+            </h2>
+            <h4 style="text-align:right;">SEE YOU SOON &nbsp &nbsp</h4>
+        </td>
+        <td style = "text-align: center" colspan="1" >
+        </td>
+    </tr>
+    <tr>
+        <td>&nbsp</td>
+        <td>&nbsp</td>
+    </tr>
+
+</table>
+
 </body>
 </html>
