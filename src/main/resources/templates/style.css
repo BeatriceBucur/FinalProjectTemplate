@@ -1,0 +1,31 @@
+
+h1  {
+
+    color: #d9d9d9;
+}
+
+th {
+    color: #cccccc;
+}
+
+
+td {
+    text-align: justify;
+    color: grey;
+    width:30px;height:30px;
+}
+
+text-centered{
+    text-align: right;
+    color: grey;
+}
+
+image-centered{
+    align: center;
+}
+
+right-align {
+
+    text-align:right;
+}
+
